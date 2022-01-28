@@ -8,12 +8,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 import tensorflow as tf
 import numpy as np
-from utils.dataUtils.readData import getData
-
+import pandas as pd
 
 completeFilePath = os.getcwd() + '/Churn_Modelling.csv'
 
-df = getData(completeFilePath=completeFilePath, ext='csv')
+df = pd.read_csv(completeFilePath)
 
 # data preprocessing
 featureColumn = ['CreditScore', 'Geography',
